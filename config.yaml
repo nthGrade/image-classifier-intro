@@ -1,0 +1,33 @@
+# Configuration for Image Classifier
+models:
+  - arch: 'vgg19'
+    input_size: 25088
+    output_size: 102
+    hidden_layers: 4096
+    dropout: 0.2
+  - arch: 'vgg13'
+    input_size: 25088
+    output_size: 102
+    hidden_layers: 4096
+    dropout: 0.2
+  - arch: 'alexnet'
+    input_size: 9216
+    output_size: 102
+    hidden_layers: 4096
+    dropout: 0.2
+  - arch: 'densenet161'
+    input_size: 2208
+    output_size: 102
+    hidden_layers: 2048
+    dropout: 0.2
+
+training:
+    epochs: 5
+    learning_rate: 0.0001
+    checkpoint_dir: 'checkpoints'
+
+predicting:
+    top_k: 5
+
+data:
+    batch_size: 64
